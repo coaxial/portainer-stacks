@@ -3,7 +3,8 @@ version: "2.1"
 services:
   projectsend:
     image: lscr.io/linuxserver/projectsend:latest
-    container_name: projectsend
+    depends_on:
+      - db
     environment:
       - PUID=1000
       - PGID=100
