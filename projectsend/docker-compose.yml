@@ -17,7 +17,7 @@ services:
       - "80"
     restart: unless-stopped
   db:
-    image: linuxserver/mariadb:alpine
+    image: linuxserver/mariadb:latest
     environment:
       - TZ=Europe/Zurich
       - PUID=1000
