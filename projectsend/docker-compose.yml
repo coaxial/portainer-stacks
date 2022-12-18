@@ -1,0 +1,28 @@
+---
+version: "2.1"
+services:
+  projectsend:
+    image: lscr.io/linuxserver/projectsend:latest
+    container_name: projectsend
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Europe/Zurich
+      - MAX_UPLOAD=5000
+    volumes:
+      - projectsend_config:/config
+      - projectsend_data:/data
+    ports:
+      - 80:80
+    restart: unless-stopped
+  db:
+    image: linuxserver/mariadb
+    environment:
+      - TZ=Europe/Zurich
+      - PUID=1000
+      - PGID=100
+    volumes:
+      - projectsend_db_config:/config
+    ports:
+      - 3306:3306/tcp
+    restart: unless-stopped
