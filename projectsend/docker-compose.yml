@@ -24,7 +24,7 @@ services:
       - PGID=100
     volumes:
       - projectsend_db_config:/config
-    ports:
+    expose:
       - "3306/tcp"
     restart: unless-stopped
 volumes:
