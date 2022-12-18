@@ -27,6 +27,6 @@ services:
       - 3306:3306/tcp
     restart: unless-stopped
 volumes:
-  - projectsend_config
-  - projectsend_data
-  - projectsend_db_config
+  projectsend_config:
+  projectsend_data:
+  projectsend_db_config:
