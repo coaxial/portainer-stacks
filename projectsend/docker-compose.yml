@@ -13,7 +13,7 @@ services:
       - projectsend_config:/config
       - projectsend_data:/data
     ports:
-      - 80:80
+      - "80"
     restart: unless-stopped
   db:
     image: linuxserver/mariadb:alpine
@@ -24,7 +24,7 @@ services:
     volumes:
       - projectsend_db_config:/config
     ports:
-      - 3306:3306/tcp
+      - "3306/tcp"
     restart: unless-stopped
 volumes:
   projectsend_config:
