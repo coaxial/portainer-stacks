@@ -25,7 +25,7 @@ services:
     volumes:
       - projectsend_db_config:/config
     expose:
-      - "3306/tcp"
+      - "3306"
     restart: unless-stopped
 volumes:
   projectsend_config:
